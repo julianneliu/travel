@@ -1,5 +1,7 @@
 <template>
-  <div>home</div>
+  <div>
+    <div>helloworld</div>
+  </div>
 </template>
 <script>
 export default {
@@ -7,4 +9,4 @@ export default {
 };
 </script>
 
-<style lang="stylus"></style>
+<style></style>
