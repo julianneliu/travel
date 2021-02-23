@@ -1,6 +1,6 @@
 <template>
-  <swiper ref="mySwiper" :options="swiperOptions">
-    <swiper-slide v-for="item of swiperList" :key="item.id">
+  <swiper ref="mySwiper" :options="swiperOptions" v-if="showSwiper">
+    <swiper-slide v-for="item of list" :key="item.id">
       <img class="swiper-img" :src="item.imgUrl" alt="" />
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
@@ -9,6 +9,9 @@
 <script>
 export default {
   name: "HomeSwiper",
+  props: {
+    list: Array,
+  },
   data() {
     return {
       swiperList: [
@@ -35,6 +38,11 @@ export default {
         // Some Swiper option/callback...
       },
     };
+  },
+  computed: {
+    showSwiper() {
+      return this.list.length;
+    },
   },
   //   computed: {
   //     swiper() {

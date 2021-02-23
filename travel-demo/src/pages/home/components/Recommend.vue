@@ -2,11 +2,7 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li
-        class="item border-bottom"
-        v-for="item of RecommendList"
-        :key="item.id"
-      >
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" alt="" />
 
         <div class="item-info">
@@ -22,38 +18,41 @@
 <script>
 export default {
   name: "HomeRecommend",
+  props: {
+    list: Array,
+  },
   data() {
     return {
-      RecommendList: [
-        {
-          id: "1",
-          imgUrl:
-            "http://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg",
-          title: "【跟团游】热卖|体验三峡人家",
-          desc: "清江画廊、两坝一峡游轮过船闸、三峡大坝三日游",
-        },
-        {
-          id: "2",
-          imgUrl:
-            "http://imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg",
-          title: "【跟团游】热卖|体验三峡人家",
-          desc: "清江画廊、两坝一峡游轮过船闸、三峡大坝三日游",
-        },
-        {
-          id: "3",
-          imgUrl:
-            "http://imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg",
-          title: "【跟团游】热卖|体验三峡人家",
-          desc: "清江画廊、两坝一峡游轮过船闸、三峡大坝三日游",
-        },
-        {
-          id: "4",
-          imgUrl:
-            "http://imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg",
-          title: "【跟团游】热卖|体验三峡人家",
-          desc: "清江画廊、两坝一峡游轮过船闸、三峡大坝三日游",
-        },
-      ],
+      //   RecommendList: [
+      //     {
+      //       id: "1",
+      //       imgUrl:
+      //         "http://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg",
+      //       title: "【跟团游】热卖|体验三峡人家",
+      //       desc: "清江画廊、两坝一峡游轮过船闸、三峡大坝三日游",
+      //     },
+      //     {
+      //       id: "2",
+      //       imgUrl:
+      //         "http://imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg",
+      //       title: "【跟团游】热卖|体验三峡人家",
+      //       desc: "清江画廊、两坝一峡游轮过船闸、三峡大坝三日游",
+      //     },
+      //     {
+      //       id: "3",
+      //       imgUrl:
+      //         "http://imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg",
+      //       title: "【跟团游】热卖|体验三峡人家",
+      //       desc: "清江画廊、两坝一峡游轮过船闸、三峡大坝三日游",
+      //     },
+      //     {
+      //       id: "4",
+      //       imgUrl:
+      //         "http://imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg",
+      //       title: "【跟团游】热卖|体验三峡人家",
+      //       desc: "清江画廊、两坝一峡游轮过船闸、三峡大坝三日游",
+      //     },
+      //   ],
     };
   },
 };

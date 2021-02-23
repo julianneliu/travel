@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper ref="mySwiper">
+    <swiper ref="mySwiper" :options="swiperOptions">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -15,66 +15,80 @@
 <script>
 export default {
   name: "HomeIcons",
+  props: {
+    list: Array,
+  },
   data() {
     return {
-      iconList: [
-        {
-          id: "1",
-          imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-          desc: "酒店",
+      swiperOptions: {
+        // autoplay: false,
+        pagination: {
+          el: ".swiper-pagination",
         },
-        {
-          id: "2",
-          imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
-          desc: "机票",
-        },
-        {
-          id: "3",
-          imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/train.png",
-          desc: "火车票",
-        },
-        {
-          id: "4",
-          imgUrl:
-            "http://s.qunarzz.com/homenode/images/touchheader/package.png",
-          desc: "度假",
-        },
-        {
-          id: "5",
-          imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/piao.png",
-          desc: "景点门票",
-        },
-        {
-          id: "6",
-          imgUrl:
-            "https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-          desc: "海外酒店",
-        },
-        {
-          id: "7",
-          imgUrl:
-            "https://picbed.qunarzz.com/a36d2288f19e54562338f4d8ef986288.png",
-          desc: "低价机票",
-        },
-        {
-          id: "8",
-          imgUrl:
-            "https://picbed.qunarzz.com/377db8cb2143aebf01869c9baad3d325.png",
-          desc: "船票",
-        },
-        {
-          id: "9",
-          imgUrl:
-            "https://picbed.qunarzz.com/ae617a31e0bd5803d76918b817f6d942.png",
-          desc: "自由行",
-        },
-      ],
+        keyboardControl: true,
+        mousewheelControl: true,
+        loop: true,
+        slidesPerView: "auto",
+        loopedSlides: 2,
+      },
+      //   iconList: [
+      //     {
+      //       id: "1",
+      //       imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
+      //       desc: "酒店",
+      //     },
+      //     {
+      //       id: "2",
+      //       imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/flight.png",
+      //       desc: "机票",
+      //     },
+      //     {
+      //       id: "3",
+      //       imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/train.png",
+      //       desc: "火车票",
+      //     },
+      //     {
+      //       id: "4",
+      //       imgUrl:
+      //         "http://s.qunarzz.com/homenode/images/touchheader/package.png",
+      //       desc: "度假",
+      //     },
+      //     {
+      //       id: "5",
+      //       imgUrl: "http://s.qunarzz.com/homenode/images/touchheader/piao.png",
+      //       desc: "景点门票",
+      //     },
+      //     {
+      //       id: "6",
+      //       imgUrl:
+      //         "https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
+      //       desc: "海外酒店",
+      //     },
+      //     {
+      //       id: "7",
+      //       imgUrl:
+      //         "https://picbed.qunarzz.com/a36d2288f19e54562338f4d8ef986288.png",
+      //       desc: "低价机票",
+      //     },
+      //     {
+      //       id: "8",
+      //       imgUrl:
+      //         "https://picbed.qunarzz.com/377db8cb2143aebf01869c9baad3d325.png",
+      //       desc: "船票",
+      //     },
+      //     {
+      //       id: "9",
+      //       imgUrl:
+      //         "https://picbed.qunarzz.com/ae617a31e0bd5803d76918b817f6d942.png",
+      //       desc: "自由行",
+      //     },
+      //   ],
     };
   },
   computed: {
     pages() {
       const pages = [];
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8);
         if (!pages[page]) {
           pages[page] = [];
