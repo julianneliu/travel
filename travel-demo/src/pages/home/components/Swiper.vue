@@ -14,18 +14,18 @@ export default {
   },
   data() {
     return {
-      swiperList: [
-        {
-          id: "1",
-          imgUrl:
-            "http://imgs.qunarzz.com/vs_ceph_vcimg/f03f5ac90ae59d0d9c6332a2bfd9782e.jpeg",
-        },
-        {
-          id: "2",
-          imgUrl:
-            "http://imgs.qunarzz.com/vs_ceph_vcimg/569cae4ae98e9793f7341e85eed73c54.jpeg",
-        },
-      ],
+      //   swiperList: [
+      //     {
+      //       id: "1",
+      //       imgUrl:
+      //         "http://imgs.qunarzz.com/vs_ceph_vcimg/f03f5ac90ae59d0d9c6332a2bfd9782e.jpeg",
+      //     },
+      //     {
+      //       id: "2",
+      //       imgUrl:
+      //         "http://imgs.qunarzz.com/vs_ceph_vcimg/569cae4ae98e9793f7341e85eed73c54.jpeg",
+      //     },
+      //   ],
       swiperOptions: {
         pagination: {
           el: ".swiper-pagination",
