@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import Bscroll from "better-scroll";
+// import Bscroll from "better-scroll";
 import { mapState, mapMutations } from "vuex";
 export default {
   name: "CityList",
@@ -83,7 +83,7 @@ export default {
     },
   },
   mounted() {
-    this.scroll = new Bscroll(this.$refs.wrapper);
+    // this.scroll = new Bscroll(this.$refs.wrapper);
   },
   watch: {
     letter() {
