@@ -12,8 +12,11 @@ import VueAwesomeSwiper from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
+import Vuex from "vuex";
+import store from "./store";
 // import "default-passive-events";
 
+Vue.use(Vuex);
 Vue.config.productionTip = false;
 fastclick.attach(document.body);
 Vue.use(Router);
@@ -22,5 +25,6 @@ Vue.use(VueAwesomeSwiper /* { default options with global component } */);
 
 new Vue({
   router,
+  store,
   render: (h) => h(App),
 }).$mount("#app");
